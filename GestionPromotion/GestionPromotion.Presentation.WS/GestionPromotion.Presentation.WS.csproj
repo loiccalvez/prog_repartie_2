@@ -51,6 +51,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionPromotion.Business.BC\GestionPromotion.Business.BC.csproj">
+      <Project>{3ce48268-d5cc-4bda-8f24-b959839c086c}</Project>
+      <Name>GestionPromotion.Business.BC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionPromotion.Entity.BC\GestionPromotion.Entity.BC.csproj">
+      <Project>{9039fa77-3b16-4785-b538-af086615db0f}</Project>
+      <Name>GestionPromotion.Entity.BC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\WCF\Microsoft.VisualStudio.ServiceModel.targets" />
   <ProjectExtensions>

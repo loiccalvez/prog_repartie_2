@@ -1,0 +1,12 @@
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.dll.config
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Business.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Entity.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Business.BC.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Entity.BC.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.pdb

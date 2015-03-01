@@ -17,6 +17,8 @@ namespace GestionPromotion.Presentation.WS
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        void tempo_test_1();
         // TODO: ajoutez vos opérations de service ici
     }
 

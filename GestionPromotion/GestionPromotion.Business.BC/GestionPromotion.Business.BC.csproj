@@ -42,6 +42,16 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionPromotion.Data.BC\GestionPromotion.Data.BC.csproj">
+      <Project>{15163f50-19e8-45eb-a725-641ccec96a38}</Project>
+      <Name>GestionPromotion.Data.BC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionPromotion.Entity.BC\GestionPromotion.Entity.BC.csproj">
+      <Project>{9039fa77-3b16-4785-b538-af086615db0f}</Project>
+      <Name>GestionPromotion.Entity.BC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

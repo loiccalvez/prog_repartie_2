@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionPromotion.Entity.BC
 {
-    class Etudiant
+    public class Etudiant
     {
         // Variables de la classe Etudiant
         private String m_prenom;

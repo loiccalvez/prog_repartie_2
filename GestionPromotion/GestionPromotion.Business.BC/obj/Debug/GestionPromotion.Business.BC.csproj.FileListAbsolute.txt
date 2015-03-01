@@ -1,0 +1,9 @@
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Business.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Business.BC.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Data.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Entity.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Data.BC.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Entity.BC.pdb
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.dll
+C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.pdb
