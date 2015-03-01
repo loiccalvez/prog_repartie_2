@@ -24,13 +24,18 @@ namespace GestionPromotion.Entity.BC
             get { return m_annee; }
             set { m_annee = value; }
         }
-        internal List<Etudiant> Liste_etudiant
+        public List<Etudiant> Liste_etudiant
         {
             get { return m_liste_etudiant; }
             set { m_liste_etudiant = value; }
         }
 
         // Constructeurs
+        // Contructeur 0 par défaut. Nécessaire à la sérialisation
+        public Promotion()
+        {
+            this.m_liste_etudiant = new List<Etudiant>();
+        }
         // Constructeur 1 : tous les paramètres sont passés
         public Promotion(String p_nom, Int16 p_annee, List<Etudiant> p_liste_etudiant)
         {
@@ -39,8 +44,7 @@ namespace GestionPromotion.Entity.BC
             this.m_annee = p_annee;
             this.m_liste_etudiant = p_liste_etudiant;
         }
-
-        // Constructeur 2 : il n'y a pas encore d'étudiant dan la liste
+        // Constructeur 2 : il n'y a pas encore d'étudiant dans la liste
         public Promotion(String p_nom, Int16 p_annee)
         {
             if (p_nom != null)
@@ -48,8 +52,6 @@ namespace GestionPromotion.Entity.BC
             this.m_annee = p_annee;
             this.m_liste_etudiant = null;
         }
-
-        public Promotion() { }
 
         // Méthodes de la classe Etudiant
         // ICI

@@ -30,7 +30,10 @@ namespace GestionPromotion.Entity.BC
             set { m_date_de_naissance = value; }
         }
 
-        // Constructeur : tous les paramètres doivent être passés.
+        // Constructeurs
+        // Constructeur par défaut. Nécessaire à la sérialisatio
+        public Etudiant() { }
+        // Constructeur 1 : tous les paramètres doivent être passés.
         public Etudiant(String p_prenom, String p_nom, String p_date_de_naissance)
         {
             if((p_prenom != null) && (p_nom != null) && (p_date_de_naissance != null))
