@@ -28,11 +28,23 @@ namespace GestionPromotion.Presentation.WS
             return composite;
         }
 
-        // Fonction temporaire -- Loïc
+        // Fonctions temporaires -- Loïc
         public void tempo_test_1()
         {
             GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
             Cl.tempo_test_1_1();
+        }
+
+        public void tempo_test_2()
+        {
+            GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
+            Cl.tempo_test_2_1();
+        }
+
+        public int tempo_test_3()
+        {
+            GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
+            return Cl.tempo_test_3_1();
         }
     }
 }

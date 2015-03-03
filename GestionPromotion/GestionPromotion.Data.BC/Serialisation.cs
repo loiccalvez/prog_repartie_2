@@ -12,36 +12,32 @@ namespace GestionPromotion.Data.BC
     public class Serialisation
     {
         // Constructeur par défaut. Pas d'attribut dans la classe
-        public Serialisation()
-        {}
+        public Serialisation() {}
 
-        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotion p_promotion, String p_chemin_dacces)
+        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces, String p_nom_fichier)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotion));
+            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
             try
             {
-                using (StreamWriter wr = new StreamWriter(p_chemin_dacces))
+                using (StreamWriter wr = new StreamWriter(p_chemin_dacces + "//" + p_nom_fichier))
                 {
-                    xs.Serialize(wr, p_promotion);
+                    xs.Serialize(wr, p_promotions );
                 }
             }
             catch (Exception ee)
             { }
         }
 
-        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotion p_promotion)
+        // Fonction de sérialisation avec chemin par défaut, c'est-à-dire C:/TP et sans nom de fichier
+        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotion));
-            try
-            {
-                using (StreamWriter wr = new StreamWriter("C:/TP"))
-                {
-                    xs.Serialize(wr, p_promotion);
-                }
-            }
-            catch (Exception ee)
-            {
-            }
+            serialiser_promotion(p_promotions, p_chemin_dacces, "promotions.xml");
+        }
+
+        // Fonction de sérialisation sans chemin par défaut, c'est-à-dire C:/TP et sans nom de fichier
+        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions)
+        {
+            serialiser_promotion(p_promotions, "C://TP", "promotions.xml");
         }
 
         // Fonction de test. A garder pour le moment -- Loïc
@@ -59,7 +55,7 @@ namespace GestionPromotion.Data.BC
             List<GestionPromotion.Entity.BC.Etudiant> L_ET2 = new List<Entity.BC.Etudiant>();
             GestionPromotion.Entity.BC.Etudiant etu4 = new Entity.BC.Etudiant("Clément", "Palluel", "06/12/1995");
             GestionPromotion.Entity.BC.Etudiant etu5 = new Entity.BC.Etudiant("Thibaut", "Monet", "23/10/1995");
-            GestionPromotion.Entity.BC.Etudiant etu6 = new Entity.BC.Etudiant("Duncan", "Billiet", "19/02./1995");
+            GestionPromotion.Entity.BC.Etudiant etu6 = new Entity.BC.Etudiant("Duncan", "Billiet", "19/02/1995");
             L_ET2.Add(etu4);
             L_ET2.Add(etu5);
             L_ET2.Add(etu6);
@@ -88,5 +84,16 @@ namespace GestionPromotion.Data.BC
             }
         }
 
+
+        // Fonction de test. A garder pour le moment -- Loïc
+        public int test_deserial()
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
+            using (StreamReader rd = new StreamReader("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2//promotions.xml"))
+            {
+                GestionPromotion.Entity.BC.Promotions promotions = xs.Deserialize(rd) as Entity.BC.Promotions;
+                return promotions.Liste_promotion.Count();
+            }
+        }
     }
 }

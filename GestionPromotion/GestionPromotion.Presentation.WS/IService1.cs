@@ -17,8 +17,15 @@ namespace GestionPromotion.Presentation.WS
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        // Fonctions temporaires -- Loïc
         [OperationContract]
         void tempo_test_1();
+
+        [OperationContract]
+        void tempo_test_2();
+
+        [OperationContract]
+        int tempo_test_3();
         // TODO: ajoutez vos opérations de service ici
     }
 

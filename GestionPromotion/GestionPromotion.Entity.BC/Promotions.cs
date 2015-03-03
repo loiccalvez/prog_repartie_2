@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace GestionPromotion.Entity.BC
 {
@@ -12,6 +13,7 @@ namespace GestionPromotion.Entity.BC
         private List<Promotion> m_liste_promotion;
 
         // Getter/Setter de la classe
+        [XmlElement("Promotion")]
         public List<Promotion> Liste_promotion
         {
             get { return m_liste_promotion; }

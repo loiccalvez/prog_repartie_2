@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace GestionPromotion.Entity.BC
 {
@@ -24,6 +25,7 @@ namespace GestionPromotion.Entity.BC
             get { return m_annee; }
             set { m_annee = value; }
         }
+        [XmlElement("Etudiant")]
         public List<Etudiant> Liste_etudiant
         {
             get { return m_liste_etudiant; }
