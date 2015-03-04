@@ -28,5 +28,6 @@ namespace GestionPromotion.Entity.BC
         {
             this.m_liste_promotion = p_liste_promotion;
         }
+
     }
 }

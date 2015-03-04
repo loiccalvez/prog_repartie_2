@@ -25,7 +25,7 @@ namespace GestionPromotion.Presentation.WS
         void tempo_test_2();
 
         [OperationContract]
-        int tempo_test_3();
+        String tempo_test_3();
         // TODO: ajoutez vos opérations de service ici
     }
 

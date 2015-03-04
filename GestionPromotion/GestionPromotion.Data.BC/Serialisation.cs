@@ -12,8 +12,10 @@ namespace GestionPromotion.Data.BC
     public class Serialisation
     {
         // Constructeur par défaut. Pas d'attribut dans la classe
-        public Serialisation() {}
+        public Serialisation() { }
 
+        // Méthodes de la classes
+        // Fonction de serialistion avec chemin et avec nom de fichier
         public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces, String p_nom_fichier)
         {
             XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
@@ -28,13 +30,13 @@ namespace GestionPromotion.Data.BC
             { }
         }
 
-        // Fonction de sérialisation avec chemin par défaut, c'est-à-dire C:/TP et sans nom de fichier
+        // Fonction de sérialisation avec chemin et sans nom de fichier donc avec promotions.xml
         public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces)
         {
             serialiser_promotion(p_promotions, p_chemin_dacces, "promotions.xml");
         }
 
-        // Fonction de sérialisation sans chemin par défaut, c'est-à-dire C:/TP et sans nom de fichier
+        // Fonction de sérialisation sans chemin, donc avec C:/TP et sans nom de fichier donc avec promotions.xml
         public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions)
         {
             serialiser_promotion(p_promotions, "C://TP", "promotions.xml");
@@ -84,16 +86,5 @@ namespace GestionPromotion.Data.BC
             }
         }
 
-
-        // Fonction de test. A garder pour le moment -- Loïc
-        public int test_deserial()
-        {
-            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
-            using (StreamReader rd = new StreamReader("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2//promotions.xml"))
-            {
-                GestionPromotion.Entity.BC.Promotions promotions = xs.Deserialize(rd) as Entity.BC.Promotions;
-                return promotions.Liste_promotion.Count();
-            }
-        }
     }
 }

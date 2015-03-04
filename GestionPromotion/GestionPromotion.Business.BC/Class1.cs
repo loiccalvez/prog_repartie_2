@@ -57,13 +57,13 @@ namespace GestionPromotion.Business.BC
 
             // A garder, c'est l'appel à la fonction. La surchage sera à choisir par tes soins :=)
             GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
-            Sr.serialiser_promotion(Promotions, "C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2","promo.xml");
+            Sr.serialiser_promotion(Promotions, "C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2","promotions.xml");
         }
 
-        public int tempo_test_3_1()
+        public GestionPromotion.Entity.BC.Promotions tempo_test_3_1()
         {
-            GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
-            return Sr.test_deserial();
+            GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
+            return DSr.deserialiser_promotion("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2");
         }
     }
 }
