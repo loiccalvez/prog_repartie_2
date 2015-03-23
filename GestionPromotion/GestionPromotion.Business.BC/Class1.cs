@@ -33,55 +33,6 @@ namespace GestionPromotion.Business.BC
 
 
         }
-        // Modification Etudiant de la liste
-        public void Modif_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe, String nom_promotion, Int16 annee_promotion)
-        {
-            //GestionPromotion.Data.BC.Serialisation verif = new Data.BC.Serialisation();
-            // verif.serialiser_promotion(p_promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // lien à changer
-            StreamReader sr;
-            String str;
-
-            sr = "promotions.xml";
-
-            // tentative d'ouverture du fichier
-            try
-            {
-                sr = new StreamReader("promotions.xml");
-            }
-            catch (Exception ee)
-            {
-                Console.WriteLine(ee.Message);
-            }
-
-            str = sr.ReadLine();
-            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
-
-            if (eclate[1] == prenom_etudiant)
-            {
-                prenom_etudiant = eclate[1];
-            }
-            if (eclate[2] == nom_etudiant)
-            {
-                nom_etudiant = eclate[2];
-            }
-            if (eclate[3] == date_etudiant)
-            {
-                date_etudiant = eclate[3];
-            }
-            if (eclate[4] == nom_groupe)
-            {
-                nom_groupe = eclate[4];
-            }
-            if (eclate[5] == nom_promotion)
-            {
-                nom_promotion = eclate[5];
-            }
-            if (Int16.Parse(eclate[6]) == annee_promotion)
-            {
-                annee_promotion = Int16.Parse(eclate[6]);
-            }
-
-        }
 
         // Ajout d'une promotion 
         public void Ajout_Promo(String nom_groupe, List<GestionPromotion.Entity.BC.Etudiant> L_Et)
@@ -98,7 +49,176 @@ namespace GestionPromotion.Business.BC
             Sr.serialiser_promotion(Promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // Lien Dylan
         }
 
-        // Supprimer une promotion 
+        // Supprimer un étudiant
+        public void Supp_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant)
+        {
+            StreamReader sr;
+            StreamWriter sw = null;
+            String str;
+            String Del;
+            String soluce;
+           
+
+            sr = "promotions.xml";
+            sw = File.AppendText("temp_promotions.xml");
+
+            // tentative d'ouverture du fichier
+            try
+            {
+                sr = new StreamReader("promotions.xml");
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+
+            str = sr.ReadLine();
+            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
+
+            if (eclate[1] == nom_etudiant && eclate[2] == prenom_etudiant && eclate[3] == date_etudiant)
+            {
+                soluce = nom_etudiant + prenom_etudiant + date_etudiant;
+
+                while (str != null)
+                {
+                    Del = str;
+                    str = sr.ReadLine();
+
+                    if (Del != soluce)
+                    {
+                        sw.WriteLine(Del);
+                    }
+
+                }
+                sr.Close();
+                sw.Close();
+                File.Delete("promotions.xml");
+                File.Move("temp_promotions.xml", "promotions.xml");
+
+            }
+            else
+                Console.WriteLine("L'étudiant : {0} {1} n'existe pas", nom_etudiant, prenom_etudiant);
+        }
+
+        // Supprimer une promotion
+        public void Supp_Promotion(String nom_promotion,Int16 annee_promotion)
+        {
+            StreamReader sr;
+            StreamWriter sw = null;
+            String str;
+            String Del;
+            String soluce;
+
+
+            sr = "promotions.xml";
+            sw = File.AppendText("temp_promotions.xml");
+
+            // tentative d'ouverture du fichier
+            try
+            {
+                sr = new StreamReader("promotions.xml");
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+
+            str = sr.ReadLine();
+            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
+
+            if (eclate[5] == nom_promotion && Int16.Parse(eclate[6]) == annee_promotion)
+            {
+                soluce = nom_promotion + annee_promotion;
+
+                while (str != null)
+                {
+                    Del = str;
+                    str = sr.ReadLine();
+
+                    if (Del != soluce)
+                    {
+                        sw.WriteLine(Del);
+                    }
+
+                }
+
+                sr.Close();
+                sw.Close();
+                File.Delete("promotions.xml");
+                File.Move("temp_promotions.xml", "promotions.xml");
+
+            }
+            else
+            {
+                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_promotion, annee_promotion);
+                sr.Close();
+            }
+        }
+
+        // Modification Etudiant de la liste
+        public void Modif_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe, String nom_promotion, Int16 annee_promotion)
+        {
+            //GestionPromotion.Data.BC.Serialisation verif = new Data.BC.Serialisation();
+            // verif.serialiser_promotion(p_promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // lien à changer
+            StreamReader sr;
+            StreamWriter sw = null;
+            String str;
+            String Modif;
+            String soluce;
+
+            sr = "promotions.xml";
+            sw = File.AppendText("temp_promotions.xml");
+
+            // tentative d'ouverture du fichier
+            try
+            {
+                sr = new StreamReader("promotions.xml");
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+
+            str = sr.ReadLine();
+            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
+
+            if (eclate[1] == nom_etudiant && eclate[2] == prenom_etudiant && eclate[3] == date_etudiant && eclate[4] == nom_groupe && eclate[5] == nom_promotion && Int16.Parse(eclate[6]) == annee_promotion)
+            {
+                soluce = nom_promotion + annee_promotion;
+
+                while (str != null)
+                {
+                    Modif = str;
+                    str = sr.ReadLine();
+
+                    if (Modif != soluce)
+                    {
+                        sw.WriteLine(Modif);
+                    }
+                    else if (Modif == soluce)
+                    {
+
+                    }
+
+                }
+
+                sr.Close();
+                sw.Close();
+                File.Delete("promotions.xml");
+                File.Move("temp_promotions.xml", "promotions.xml");
+
+            }
+            else
+            {
+                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_promotion, annee_promotion);
+                sr.Close();
+            }
+
+        }
+
+
+
+        // Deserialiser 
         public GestionPromotion.Entity.BC.Promotions Supp_Promo()
         {
             GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
