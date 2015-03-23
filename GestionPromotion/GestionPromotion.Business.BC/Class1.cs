@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Xml;
+using System.Xml.Schema;
 
 namespace GestionPromotion.Business.BC
 {
@@ -14,14 +16,46 @@ namespace GestionPromotion.Business.BC
          private String m_prenom_Etudiant;
          private String m_date_Etudiant;
          private String m_nom_groupe;*/
-
+         static XmlReader reader;
+         static String filename = "promotion.xml";
+        
         public Business() { }
 
         // Init Sérialisation
         public void Init_Serialisation()
         {
-            GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
-            Sr.test_serial();
+            GestionPromotion.Data.BC.Serialisation Sr;
+
+            try
+            {
+                Sr = new Data.BC.Serialisation();
+                Sr.test_serial();
+            }
+            catch (Exception ee)
+            {
+
+                //ValidationEventHandler eventHandler = new ValidationEventHandler(XmlDocumentSample.ValidationCallback);
+
+                try
+                {
+                    XmlReaderSettings settings = new XmlReaderSettings();
+                    settings.DtdProcessing = DtdProcessing.Parse;
+                    settings.ValidationType = ValidationType.DTD;
+                    //settings.ValidationEventHandler += eventHandler;
+
+                    reader = XmlReader.Create(filename, settings);
+
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(reader);
+                    Console.WriteLine(doc.OuterXml);
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+                }
+             }       
+        
         }
 
         // Ajout Etudiant à la liste 
@@ -59,7 +93,7 @@ namespace GestionPromotion.Business.BC
             String soluce;
            
 
-            sr = "promotions.xml";
+            sr = promotions.xml;
             sw = File.AppendText("temp_promotions.xml");
 
             // tentative d'ouverture du fichier
@@ -98,6 +132,7 @@ namespace GestionPromotion.Business.BC
             }
             else
                 Console.WriteLine("L'étudiant : {0} {1} n'existe pas", nom_etudiant, prenom_etudiant);
+                sr.Close();
         }
 
         // Supprimer une promotion
@@ -210,7 +245,7 @@ namespace GestionPromotion.Business.BC
             }
             else
             {
-                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_promotion, annee_promotion);
+                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_etudiant, prenom_etudiant);
                 sr.Close();
             }
 
