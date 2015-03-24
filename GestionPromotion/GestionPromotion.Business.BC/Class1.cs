@@ -14,7 +14,9 @@ namespace GestionPromotion.Business.BC
     {
          static XmlReader reader;
          static String filename = "promotion.xml";
-        
+         static GestionPromotion.Data.BC.Serialisation m_serial;
+         static GestionPromotion.Data.BC.Deserialisation m_deserial;
+
         public Business() { }
 
         //Affichage de la promotion
@@ -66,17 +68,25 @@ namespace GestionPromotion.Business.BC
         }
 
         // Ajout Etudiant à la liste 
-        public void Ajout_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe)
+        public static void Ajout_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe)
         {
+
+            m_deserial.deserialiser_promotion(); // Ouverture du fichier
+
             List<GestionPromotion.Entity.BC.Etudiant> L_ET1 = new List<Entity.BC.Etudiant>();
             GestionPromotion.Entity.BC.Etudiant etu1 = new Entity.BC.Etudiant(nom_etudiant, prenom_etudiant, date_etudiant);
+            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
             L_ET1.Add(etu1);
+            
 
+            m_serial.serialiser_promotion(Promotions); // fermeture + sauvegarde
         }
 
         // Ajout d'une promotion 
-        public void Ajout_Promo(String nom_groupe, List<GestionPromotion.Entity.BC.Etudiant> L_Et)
+        public static void Ajout_Promo(String nom_groupe, List<GestionPromotion.Entity.BC.Etudiant> L_Et)
         {
+            m_deserial.deserialiser_promotion();
+
             GestionPromotion.Entity.BC.Promotion Promo1 = new Entity.BC.Promotion(nom_groupe, 2015, L_Et);
             List<GestionPromotion.Entity.BC.Promotion> L_PR = new List<Entity.BC.Promotion>();
             L_PR.Add(Promo1);
@@ -87,12 +97,16 @@ namespace GestionPromotion.Business.BC
             GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
             //Sr.serialiser_promotion(Promotions, "C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2","promotions.xml"); // Lien Loïc
             Sr.serialiser_promotion(Promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // Lien Dylan
+
+            m_serial.serialiser_promotion(Promotions); 
         }
 
         // Supprimer un étudiant
-        public void Supp_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant nom_etudiant, Entity.BC.Etudiant prenom_etudiant, Entity.BC.Etudiant date_etudiant)
+        public static void Supp_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant nom_etudiant, Entity.BC.Etudiant prenom_etudiant, Entity.BC.Etudiant date_etudiant)
         {
 
+            m_deserial.deserialiser_promotion(); // Ouverture du fichier
+            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
             try
             {
                 L_Et.Remove(nom_etudiant);
@@ -104,11 +118,17 @@ namespace GestionPromotion.Business.BC
             {
                 Console.WriteLine(" L'Etudiant : {0} {1} n'existe pas", nom_etudiant.Nom, prenom_etudiant.Prenom);
             }
+
+            m_serial.serialiser_promotion(Promotions);
         }
 
         // Supprimer Promotion
         public GestionPromotion.Entity.BC.Promotions Supp_Promo()
         {
+
+            m_deserial.deserialiser_promotion();
+            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
+
             try
             {
                 GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
@@ -120,10 +140,12 @@ namespace GestionPromotion.Business.BC
                 Console.WriteLine("Promotion inexistante");
                 return null;
             }
+
+            m_serial.serialiser_promotion(Promotions);
         }
 
         // Modification Etudiant de la liste
-        public void Modif_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant ancien_nom_etudiant, Entity.BC.Etudiant ancien_prenom_etudiant, Entity.BC.Etudiant ancien_date_etudiant, Entity.BC.Etudiant new_nom_etudiant, Entity.BC.Etudiant new_prenom_etudiant, Entity.BC.Etudiant new_date_etudiant)
+        public static void Modif_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant ancien_nom_etudiant, Entity.BC.Etudiant ancien_prenom_etudiant, Entity.BC.Etudiant ancien_date_etudiant, Entity.BC.Etudiant new_nom_etudiant, Entity.BC.Etudiant new_prenom_etudiant, Entity.BC.Etudiant new_date_etudiant)
         {
             try
             {
