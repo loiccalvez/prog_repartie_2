@@ -65,7 +65,6 @@ namespace GestionPromotion.Business.BC
             GestionPromotion.Entity.BC.Etudiant etu1 = new Entity.BC.Etudiant(nom_etudiant, prenom_etudiant, date_etudiant);
             L_ET1.Add(etu1);
 
-
         }
 
         // Ajout d'une promotion 
@@ -84,181 +83,51 @@ namespace GestionPromotion.Business.BC
         }
 
         // Supprimer un étudiant
-        public void Supp_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant)
+        public void Supp_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant nom_etudiant, Entity.BC.Etudiant prenom_etudiant, Entity.BC.Etudiant date_etudiant)
         {
-            StreamReader sr;
-            StreamWriter sw = null;
-            String str;
-            String Del;
-            String soluce;
-           
 
-            sr = promotions.xml;
-            sw = File.AppendText("temp_promotions.xml");
-
-            // tentative d'ouverture du fichier
             try
             {
-                sr = new StreamReader("promotions.xml");
+                L_Et.Remove(nom_etudiant);
+                L_Et.Remove(prenom_etudiant);
+                L_Et.Remove(date_etudiant);
             }
-            catch (Exception ee)
+            catch
             {
-                Console.WriteLine(ee.Message);
-            }
-
-            str = sr.ReadLine();
-            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
-
-            if (eclate[1] == nom_etudiant && eclate[2] == prenom_etudiant && eclate[3] == date_etudiant)
-            {
-                soluce = nom_etudiant + prenom_etudiant + date_etudiant;
-
-                while (str != null)
-                {
-                    Del = str;
-                    str = sr.ReadLine();
-
-                    if (Del != soluce)
-                    {
-                        sw.WriteLine(Del);
-                    }
-
-                }
-                sr.Close();
-                sw.Close();
-                File.Delete("promotions.xml");
-                File.Move("temp_promotions.xml", "promotions.xml");
-
-            }
-            else
-                Console.WriteLine("L'étudiant : {0} {1} n'existe pas", nom_etudiant, prenom_etudiant);
-                sr.Close();
-        }
-
-        // Supprimer une promotion
-        public void Supp_Promotion(String nom_promotion,Int16 annee_promotion)
-        {
-            StreamReader sr;
-            StreamWriter sw = null;
-            String str;
-            String Del;
-            String soluce;
-
-
-            sr = "promotions.xml";
-            sw = File.AppendText("temp_promotions.xml");
-
-            // tentative d'ouverture du fichier
-            try
-            {
-                sr = new StreamReader("promotions.xml");
-            }
-            catch (Exception ee)
-            {
-                Console.WriteLine(ee.Message);
-            }
-
-            str = sr.ReadLine();
-            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
-
-            if (eclate[5] == nom_promotion && Int16.Parse(eclate[6]) == annee_promotion)
-            {
-                soluce = nom_promotion + annee_promotion;
-
-                while (str != null)
-                {
-                    Del = str;
-                    str = sr.ReadLine();
-
-                    if (Del != soluce)
-                    {
-                        sw.WriteLine(Del);
-                    }
-
-                }
-
-                sr.Close();
-                sw.Close();
-                File.Delete("promotions.xml");
-                File.Move("temp_promotions.xml", "promotions.xml");
-
-            }
-            else
-            {
-                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_promotion, annee_promotion);
-                sr.Close();
+                Console.WriteLine(" L'Etudiant : {0} {1} n'existe pas", nom_etudiant.Nom, prenom_etudiant.Prenom);
             }
         }
 
         // Modification Etudiant de la liste
-        public void Modif_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe, String nom_promotion, Int16 annee_promotion)
+        public void Modif_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant ancien_nom_etudiant, Entity.BC.Etudiant ancien_prenom_etudiant, Entity.BC.Etudiant ancien_date_etudiant, Entity.BC.Etudiant new_nom_etudiant, Entity.BC.Etudiant new_prenom_etudiant, Entity.BC.Etudiant new_date_etudiant)
         {
-            //GestionPromotion.Data.BC.Serialisation verif = new Data.BC.Serialisation();
-            // verif.serialiser_promotion(p_promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // lien à changer
-            StreamReader sr;
-            StreamWriter sw = null;
-            String str;
-            String Modif;
-            String soluce;
-
-            sr = "promotions.xml";
-            sw = File.AppendText("temp_promotions.xml");
-
-            // tentative d'ouverture du fichier
             try
             {
-                sr = new StreamReader("promotions.xml");
+                ancien_nom_etudiant.Nom.Replace(ancien_nom_etudiant.Nom, new_nom_etudiant.Nom);
+                ancien_prenom_etudiant.Prenom.Replace(ancien_prenom_etudiant.Prenom, new_prenom_etudiant.Prenom);
+                ancien_date_etudiant.Date_de_naissance.Replace(ancien_date_etudiant.Date_de_naissance, new_date_etudiant.Date_de_naissance);
             }
             catch (Exception ee)
             {
                 Console.WriteLine(ee.Message);
             }
-
-            str = sr.ReadLine();
-            string[] eclate = str.Split(new Char[] { ' ', ' ', '\n', '\t' });
-
-            if (eclate[1] == nom_etudiant && eclate[2] == prenom_etudiant && eclate[3] == date_etudiant && eclate[4] == nom_groupe && eclate[5] == nom_promotion && Int16.Parse(eclate[6]) == annee_promotion)
-            {
-                soluce = nom_promotion + annee_promotion;
-
-                while (str != null)
-                {
-                    Modif = str;
-                    str = sr.ReadLine();
-
-                    if (Modif != soluce)
-                    {
-                        sw.WriteLine(Modif);
-                    }
-                    else if (Modif == soluce)
-                    {
-
-                    }
-
-                }
-
-                sr.Close();
-                sw.Close();
-                File.Delete("promotions.xml");
-                File.Move("temp_promotions.xml", "promotions.xml");
-
-            }
-            else
-            {
-                Console.WriteLine("La promotion : {0} {1} n'existe pas", nom_etudiant, prenom_etudiant);
-                sr.Close();
-            }
-
         }
 
 
-
-        // Deserialiser 
+        // Supprimer Promotion
         public GestionPromotion.Entity.BC.Promotions Supp_Promo()
         {
-            GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
-            //return DSr.deserialiser_promotion("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2"); // Lien Loïc
-            return DSr.deserialiser_promotion("F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2"); // Lien Dylan
+            try
+            {
+                GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
+                //return DSr.deserialiser_promotion("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2"); // Lien Loïc
+                return DSr.test_deserial();
+            }
+            catch
+            {
+                Console.WriteLine("Promotion inexistante");
+                return null;
+            }
         }
     }
 }
