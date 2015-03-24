@@ -12,14 +12,21 @@ namespace GestionPromotion.Business.BC
 
     public class Business
     {
-        /* private String m_nom_Etudiant;
-         private String m_prenom_Etudiant;
-         private String m_date_Etudiant;
-         private String m_nom_groupe;*/
          static XmlReader reader;
          static String filename = "promotion.xml";
         
         public Business() { }
+
+        //Affichage de la promotion
+        public void affiche(Entity.BC.Promotions p_promotions)
+        {
+            Entity.BC.Promotion[] m_tab_copy = new Entity.BC.Promotion[p_promotions.Liste_promotion.Count()];
+            GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
+            Sr.serialiser_promotion(p_promotions);
+            p_promotions.Liste_promotion.CopyTo(m_tab_copy);
+            for (int i = 0; i < p_promotions.Liste_promotion.Count(); i++)
+                Console.WriteLine("{0]", m_tab_copy[i]);
+        }
 
         // Init Sérialisation
         public void Init_Serialisation()
@@ -91,10 +98,27 @@ namespace GestionPromotion.Business.BC
                 L_Et.Remove(nom_etudiant);
                 L_Et.Remove(prenom_etudiant);
                 L_Et.Remove(date_etudiant);
+
             }
             catch
             {
                 Console.WriteLine(" L'Etudiant : {0} {1} n'existe pas", nom_etudiant.Nom, prenom_etudiant.Prenom);
+            }
+        }
+
+        // Supprimer Promotion
+        public GestionPromotion.Entity.BC.Promotions Supp_Promo()
+        {
+            try
+            {
+                GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
+                //return DSr.deserialiser_promotion("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2"); // Lien Loïc
+                return DSr.test_deserial();
+            }
+            catch
+            {
+                Console.WriteLine("Promotion inexistante");
+                return null;
             }
         }
 
@@ -113,21 +137,5 @@ namespace GestionPromotion.Business.BC
             }
         }
 
-
-        // Supprimer Promotion
-        public GestionPromotion.Entity.BC.Promotions Supp_Promo()
-        {
-            try
-            {
-                GestionPromotion.Data.BC.Deserialisation DSr = new Data.BC.Deserialisation();
-                //return DSr.deserialiser_promotion("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2"); // Lien Loïc
-                return DSr.test_deserial();
-            }
-            catch
-            {
-                Console.WriteLine("Promotion inexistante");
-                return null;
-            }
-        }
     }
 }
