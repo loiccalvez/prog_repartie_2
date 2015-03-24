@@ -25,7 +25,7 @@ namespace GestionPromotion.Business.BC
             Sr.serialiser_promotion(p_promotions);
             p_promotions.Liste_promotion.CopyTo(m_tab_copy);
             for (int i = 0; i < p_promotions.Liste_promotion.Count(); i++)
-                Console.WriteLine("{0]", m_tab_copy[i]);
+                Console.WriteLine("{0}", m_tab_copy[i]);
         }
 
         // Init Sérialisation
