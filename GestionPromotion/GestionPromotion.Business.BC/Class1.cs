@@ -71,21 +71,17 @@ namespace GestionPromotion.Business.BC
         public static void Ajout_Etudiant(String nom_etudiant, String prenom_etudiant, String date_etudiant, String nom_groupe)
         {
 
-            m_deserial.deserialiser_promotion(); // Ouverture du fichier
-
             List<GestionPromotion.Entity.BC.Etudiant> L_ET1 = new List<Entity.BC.Etudiant>();
             GestionPromotion.Entity.BC.Etudiant etu1 = new Entity.BC.Etudiant(nom_etudiant, prenom_etudiant, date_etudiant);
-            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
             L_ET1.Add(etu1);
-            
 
-            m_serial.serialiser_promotion(Promotions); // fermeture + sauvegarde
+            m_serial.serialiser_promotion(Promotions);
         }
 
         // Ajout d'une promotion 
         public static void Ajout_Promo(String nom_groupe, List<GestionPromotion.Entity.BC.Etudiant> L_Et)
         {
-            m_deserial.deserialiser_promotion();
 
             GestionPromotion.Entity.BC.Promotion Promo1 = new Entity.BC.Promotion(nom_groupe, 2015, L_Et);
             List<GestionPromotion.Entity.BC.Promotion> L_PR = new List<Entity.BC.Promotion>();
@@ -97,7 +93,8 @@ namespace GestionPromotion.Business.BC
             GestionPromotion.Data.BC.Serialisation Sr = new Data.BC.Serialisation();
             //Sr.serialiser_promotion(Promotions, "C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2","promotions.xml"); // Lien Loïc
             Sr.serialiser_promotion(Promotions, "F://Users//DYLAN//Documents//C# projet//Git//Prog//prog_repartie_2", "promotions.xml"); // Lien Dylan
-
+            
+            Promotions = m_deserial.deserialiser_promotion();
             m_serial.serialiser_promotion(Promotions); 
         }
 
@@ -105,8 +102,9 @@ namespace GestionPromotion.Business.BC
         public static void Supp_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant nom_etudiant, Entity.BC.Etudiant prenom_etudiant, Entity.BC.Etudiant date_etudiant)
         {
 
-            m_deserial.deserialiser_promotion(); // Ouverture du fichier
-            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
+            // Ouverture du fichier
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); 
+
             try
             {
                 L_Et.Remove(nom_etudiant);
@@ -123,11 +121,10 @@ namespace GestionPromotion.Business.BC
         }
 
         // Supprimer Promotion
-        public GestionPromotion.Entity.BC.Promotions Supp_Promo()
+        public  GestionPromotion.Entity.BC.Promotions Supp_Promo()
         {
 
-            m_deserial.deserialiser_promotion();
-            GestionPromotion.Entity.BC.Promotions Promotions = new Entity.BC.Promotions();
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); 
 
             try
             {
@@ -147,6 +144,9 @@ namespace GestionPromotion.Business.BC
         // Modification Etudiant de la liste
         public static void Modif_Etudiant(List<GestionPromotion.Entity.BC.Etudiant> L_Et, Entity.BC.Etudiant ancien_nom_etudiant, Entity.BC.Etudiant ancien_prenom_etudiant, Entity.BC.Etudiant ancien_date_etudiant, Entity.BC.Etudiant new_nom_etudiant, Entity.BC.Etudiant new_prenom_etudiant, Entity.BC.Etudiant new_date_etudiant)
         {
+
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
+
             try
             {
                 ancien_nom_etudiant.Nom.Replace(ancien_nom_etudiant.Nom, new_nom_etudiant.Nom);
@@ -157,6 +157,8 @@ namespace GestionPromotion.Business.BC
             {
                 Console.WriteLine(ee.Message);
             }
+
+            m_serial.serialiser_promotion(Promotions);
         }
 
     }
