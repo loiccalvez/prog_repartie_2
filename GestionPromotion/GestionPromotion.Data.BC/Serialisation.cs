@@ -16,7 +16,7 @@ namespace GestionPromotion.Data.BC
 
         // Méthodes de la classes
         // Fonction de serialistion avec chemin et avec nom de fichier
-        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces, String p_nom_fichier)
+        public static void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces, String p_nom_fichier)
         {
             XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
             try
@@ -26,24 +26,24 @@ namespace GestionPromotion.Data.BC
                     xs.Serialize(wr, p_promotions );
                 }
             }
-            catch (Exception ee)
+            catch (Exception)
             { }
         }
 
         // Fonction de sérialisation avec chemin et sans nom de fichier donc avec promotions.xml
-        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces)
+        public static void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions, String p_chemin_dacces)
         {
             serialiser_promotion(p_promotions, p_chemin_dacces, "promotions.xml");
         }
 
         // Fonction de sérialisation sans chemin, donc avec C:/TP et sans nom de fichier donc avec promotions.xml
-        public void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions)
+        public static void serialiser_promotion(GestionPromotion.Entity.BC.Promotions p_promotions)
         {
             serialiser_promotion(p_promotions, "C://TP", "promotions.xml");
         }
 
         // Fonction de test. A garder pour le moment -- Loïc
-        public void test_serial()
+        public static void test_serial()
         {
             List<GestionPromotion.Entity.BC.Etudiant> L_ET1 = new List<Entity.BC.Etudiant>();
             GestionPromotion.Entity.BC.Etudiant etu1 = new Entity.BC.Etudiant("Dylan", "Lecomte", "03/05/1994");

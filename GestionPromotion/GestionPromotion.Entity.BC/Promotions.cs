@@ -22,7 +22,10 @@ namespace GestionPromotion.Entity.BC
 
         // Constructeurs
         // Constructeur par défaut. Nécessaire à la sérialisation
-        public Promotions() { }
+        public Promotions() 
+        {
+            this.m_liste_promotion = new List<Promotion>();
+        }
         // Constructeur 1 : prenant une liste de promotion en paramètre
         public Promotions(List<Promotion> p_liste_promotion)
         {

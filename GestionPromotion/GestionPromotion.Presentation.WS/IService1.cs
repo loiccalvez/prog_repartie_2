@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace GestionPromotion.Presentation.WS
 {
@@ -12,21 +13,25 @@ namespace GestionPromotion.Presentation.WS
     public interface IService1
     {
         [OperationContract]
-        string GetData(int value);
+        void Initialisation();
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        /*// Fonctions temporaires -- Loïc
-        [OperationContract]
-        void tempo_test_1();
+        GestionPromotion.Entity.BC.Promotions GetListePromotions();
 
         [OperationContract]
-        void tempo_test_2();
+        void AjouterPromo(GestionPromotion.Entity.BC.Promotion p_promo);
 
         [OperationContract]
-        String tempo_test_3();*/
-        // TODO: ajoutez vos opérations de service ici
+        void SupprimerPromo(GestionPromotion.Entity.BC.Promotion p_promo);
+
+        [OperationContract]
+        void AjouterEtu(GestionPromotion.Entity.BC.Etudiant p_etu, GestionPromotion.Entity.BC.Promotion p_promo);
+
+        [OperationContract]
+        void SupprimerEtu(GestionPromotion.Entity.BC.Etudiant p_etu, GestionPromotion.Entity.BC.Promotion p_promo);
+
+        [OperationContract]
+        void ModifierEtu(GestionPromotion.Entity.BC.Etudiant p_etu, GestionPromotion.Entity.BC.Promotion p_promo);
     }
 
     // Utilisez un contrat de données (comme illustré dans l'exemple ci-dessous) pour ajouter des types composites aux opérations de service.
@@ -51,4 +56,88 @@ namespace GestionPromotion.Presentation.WS
             set { stringValue = value; }
         }
     }
+
+
+    [DataContract]
+    public class Etudiant
+    {
+        // Variables de la classe Etudiant
+        private String m_prenom;
+        private String m_nom;
+        private String m_date_de_naissance;
+
+        // Getter/Setter
+        [DataMember]
+        public String Prenom
+        {
+            get { return m_prenom; }
+            set { m_prenom = value; }
+        }
+        [DataMember]
+        public String Nom
+        {
+            get { return m_nom; }
+            set { m_nom = value; }
+        }
+        [DataMember]
+        public String Date_de_naissance
+        {
+            get { return m_date_de_naissance; }
+            set { m_date_de_naissance = value; }
+        }
+
+    }
+
+
+    [DataContract]
+    public class Promotion
+    {
+        // Variables de la classe Promotion
+        private String m_nom;
+        private Int16 m_annee;
+        private List<Etudiant> m_liste_etudiant;
+
+        // Getter/Setter
+        [DataMember]
+        public String Nom
+        {
+            get { return m_nom; }
+            set { m_nom = value; }
+        }
+        [DataMember]
+        public Int16 Annee
+        {
+            get { return m_annee; }
+            set { m_annee = value; }
+        }
+        [DataMember]
+        [XmlElement("Etudiant")]
+        public List<Etudiant> Liste_etudiant
+        {
+            get { return m_liste_etudiant; }
+            set { m_liste_etudiant = value; }
+        }
+
+    }
+
+    [DataContract]
+
+    public class Promotions
+    {
+        // Variables de la classe
+        private List<Promotion> m_liste_promotion;
+
+        // Getter/Setter de la classe
+        [DataMember]
+        [XmlElement("Promotion")]
+        public List<Promotion> Liste_promotion
+        {
+            get { return m_liste_promotion; }
+            set { m_liste_promotion = value; }
+        }
+
+
+    }
+
+
 }

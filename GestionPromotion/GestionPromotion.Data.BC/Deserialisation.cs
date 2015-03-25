@@ -16,7 +16,7 @@ namespace GestionPromotion.Data.BC
 
         // Méthodes de la classe
         // Fonction de déserialisation avec chemin et avec nom de fichier
-        public GestionPromotion.Entity.BC.Promotions deserialiser_promotion(String p_chemin, String p_nom_fichier)
+        public static GestionPromotion.Entity.BC.Promotions deserialiser_promotion(String p_chemin, String p_nom_fichier)
         {
             XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
             using (StreamReader rd = new StreamReader(p_chemin + "//" + p_nom_fichier))
@@ -27,19 +27,19 @@ namespace GestionPromotion.Data.BC
         }
         
         // Fonction de deserialisatin avec chemin et sans nom de fichier, donc avec promotions.xml
-        public GestionPromotion.Entity.BC.Promotions deserialiser_promotion(String p_chemin)
+        public static GestionPromotion.Entity.BC.Promotions deserialiser_promotion(String p_chemin)
         {
             return deserialiser_promotion(p_chemin, "promotions.xml");
         }
         
         // Fonction de désérialisation sans chemin, donc avec C:/TP et sans nom de fichier, donc avec promotions.xml
-        public GestionPromotion.Entity.BC.Promotions deserialiser_promotion()
+        public static GestionPromotion.Entity.BC.Promotions deserialiser_promotion()
         {
             return deserialiser_promotion("C://TP", "promotions.xml");
         }
 
         // Fonction de test. A garder pour le moment -- Loïc C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2
-        public GestionPromotion.Entity.BC.Promotions test_deserial()
+        public static GestionPromotion.Entity.BC.Promotions test_deserial()
         {
             XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
             using (StreamReader rd = new StreamReader("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2//promotions.xml"))
