@@ -12,61 +12,22 @@ namespace GestionPromotion.Business.BC
 
     public class Business
     {
-         static XmlReader reader;
-         static String filename = "promotion.xml";
-         static GestionPromotion.Data.BC.Serialisation m_serial;
-         static GestionPromotion.Data.BC.Deserialisation m_deserial;
+         static GestionPromotion.Data.BC.Serialisation m_serial; // variable pour les ouvertures du fichier xml
+         static GestionPromotion.Data.BC.Deserialisation m_deserial; // variable pour la fermeture du fichier xml
 
         public Business() { }
 
         //Affichage de la promotion
         public GestionPromotion.Entity.BC.Promotions affiche()
         {
-            return m_deserial.deserialiser_promotion();
+            return m_deserial.deserialiser_promotion(); // Retourne le fichier xml
         }
-
-        // Init Sérialisation
-        /*public void Init_Serialisation()
-        {
-            GestionPromotion.Data.BC.Serialisation Sr;
-
-            try
-            {
-                Sr = new Data.BC.Serialisation();
-                Sr.test_serial();
-            }
-            catch (Exception ee)
-            {
-
-                //ValidationEventHandler eventHandler = new ValidationEventHandler(XmlDocumentSample.ValidationCallback);
-
-                try
-                {
-                    XmlReaderSettings settings = new XmlReaderSettings();
-                    settings.DtdProcessing = DtdProcessing.Parse;
-                    settings.ValidationType = ValidationType.DTD;
-                    //settings.ValidationEventHandler += eventHandler;
-
-                    reader = XmlReader.Create(filename, settings);
-
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(reader);
-                    Console.WriteLine(doc.OuterXml);
-                }
-                finally
-                {
-                    if (reader != null)
-                        reader.Close();
-                }
-             }       
-        
-        }*/
 
         // Ajout Etudiant à la liste 
         public static void Ajout_Etudiant(GestionPromotion.Entity.BC.Etudiant p_etu, GestionPromotion.Entity.BC.Promotion p_promo)
         {
 
-            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); // Ouverture du fichier
 
 
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
@@ -84,19 +45,19 @@ namespace GestionPromotion.Business.BC
 
                     if (v_existe == false)
                     {
-                        v_promo.Liste_etudiant.Add(p_etu);
+                        v_promo.Liste_etudiant.Add(p_etu); // Ajout de l'étudiant dans la liste
                     }
                 }
             }
 
-            m_serial.serialiser_promotion(Promotions);
+            m_serial.serialiser_promotion(Promotions); // Sauvegarde du fichier + fermeture
         }
 
         // Ajout d'une promotion 
         public static void Ajout_Promo(GestionPromotion.Entity.BC.Promotion p_promo)
         {
 
-            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); // Ouverture du fichier xml
             Boolean v_existe = false;
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
@@ -108,19 +69,17 @@ namespace GestionPromotion.Business.BC
 
             if (v_existe == false)
             {
-                Promotions.Liste_promotion.Add(p_promo);
+                Promotions.Liste_promotion.Add(p_promo); // Ajout d'une promotion
             }
             
-            m_serial.serialiser_promotion(Promotions); 
+            m_serial.serialiser_promotion(Promotions); // Sauvegarde du fichier xml + fermeture
         }
 
         // Supprimer un étudiant
         public static void Supp_Etudiant(GestionPromotion.Entity.BC.Etudiant p_etu, GestionPromotion.Entity.BC.Promotion p_promo)
         {
 
-            // Ouverture du fichier
-            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
-
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); // Ouverture du fichier
 
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
@@ -137,25 +96,24 @@ namespace GestionPromotion.Business.BC
                 }
             }
 
-            m_serial.serialiser_promotion(Promotions);
+            m_serial.serialiser_promotion(Promotions); // Sauvegarde du fichier xml + fermeture
         }
 
         // Supprimer Promotion
         public static void Supp_Promo(GestionPromotion.Entity.BC.Promotion p_promo)
         {
 
-            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
-
+            GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion(); // ouverture du fichier
 
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
                 {
-                    Promotions.Liste_promotion.Remove(p_promo);
+                    Promotions.Liste_promotion.Remove(p_promo); // suppression de la promotion
                 }
             }
 
-            m_serial.serialiser_promotion(Promotions);
+            m_serial.serialiser_promotion(Promotions); // sauvegarde du fichier xml + fermeture
 
         }
 
@@ -166,7 +124,6 @@ namespace GestionPromotion.Business.BC
             // Ouverture du fichier
             GestionPromotion.Entity.BC.Promotions Promotions = m_deserial.deserialiser_promotion();
 
-
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
@@ -175,14 +132,14 @@ namespace GestionPromotion.Business.BC
                     {
                         if (p_etu.Nom == v_etu.Nom)
                         {
-                            v_promo.Liste_etudiant.Remove(v_etu);
-                            v_promo.Liste_etudiant.Add(p_etu);
+                            v_promo.Liste_etudiant.Remove(v_etu); // supression de l'étudiant à modifier
+                            v_promo.Liste_etudiant.Add(p_etu); // modif du nouvel étudiant
                         }
                     }
                 }
             }
 
-            m_serial.serialiser_promotion(Promotions);
+            m_serial.serialiser_promotion(Promotions); // sauvegarde du fichier xml + fermeture
         }
 
     }
