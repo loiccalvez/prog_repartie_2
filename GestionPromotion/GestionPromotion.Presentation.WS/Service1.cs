@@ -29,25 +29,25 @@ namespace GestionPromotion.Presentation.WS
         }
 
         // Fonctions temporaires -- Loïc
-        public void tempo_test_1()
+        /*public void tempo_test_1()
         {
-            GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
+            GestionPromotion.Business.BC.Business Cl = new Business.BC.Business();
             Cl.tempo_test_1_1();
         }
 
         public void tempo_test_2()
         {
-            GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
+            GestionPromotion.Business.BC.Business Cl = new Business.BC.Business();
             Cl.tempo_test_2_1();
         }
 
         public String tempo_test_3()
         {
-            GestionPromotion.Business.BC.Class1 Cl = new Business.BC.Class1();
+            GestionPromotion.Business.BC.Business Cl = new Business.BC.Business();
             GestionPromotion.Entity.BC.Promotions Pr;
             Pr = Cl.tempo_test_3_1();
             return Pr.Liste_promotion[1].Nom;
             //return "";
-        }
+        }*/
     }
 }

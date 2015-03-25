@@ -7,3 +7,12 @@ C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\Gesti
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.csprojResolveAssemblyReference.cache
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.dll
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.csprojResolveAssemblyReference.cache
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Business.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Business.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Data.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Data.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\bin\Debug\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Business.BC\obj\Debug\GestionPromotion.Business.BC.pdb

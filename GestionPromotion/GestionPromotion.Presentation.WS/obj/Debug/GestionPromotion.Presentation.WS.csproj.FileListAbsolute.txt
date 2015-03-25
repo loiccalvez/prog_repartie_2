@@ -10,3 +10,15 @@ C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\Gesti
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.pdb
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.dll
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.dll.config
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Presentation.WS.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Business.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Business.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Debug\GestionPromotion.Data.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.csprojResolveAssemblyReference.cache
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Debug\GestionPromotion.Presentation.WS.pdb

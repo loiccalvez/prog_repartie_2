@@ -3,3 +3,8 @@ C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\Gesti
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.csprojResolveAssemblyReference.cache
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.dll
 C:\Users\Loïc\Documents\GestionPromotion\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Debug\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Debug\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.csprojResolveAssemblyReference.cache
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.pdb
