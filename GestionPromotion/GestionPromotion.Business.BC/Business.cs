@@ -15,15 +15,17 @@ namespace GestionPromotion.Business.BC
 
         public Business() { }
 
-        //Affichage de la promotion
 
         public static void Initialisation()
         {
-            GestionPromotion.Entity.BC.Promotions v_liste = new GestionPromotion.Entity.BC.Promotions();
-            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(v_liste);
+            //tests
+            GestionPromotion.Data.BC.Serialisation.test_serial();
+
+            //GestionPromotion.Entity.BC.Promotions v_liste = new Entity.BC.Promotions();
+            //GestionPromotion.Data.BC.Serialisation.serialiser_promotion(v_liste);
         }
 
-
+        // Fonction servant à retourner la liste des promotions
         public static GestionPromotion.Entity.BC.Promotions affiche()
         {
             try
@@ -46,15 +48,16 @@ namespace GestionPromotion.Business.BC
             }
             catch (Exception)
             {
-                Promotions = null;
+                Promotions = new Entity.BC.Promotions();
             } 
             
 
-
+            //Recherche de l'existance de la promotion
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
                 {
+                    // Recherche de l'existance de l'etudiant
                     Boolean v_existe = false;
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in p_promo.Liste_etudiant)
                     {
@@ -71,7 +74,7 @@ namespace GestionPromotion.Business.BC
                 }
             }
 
-            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(Promotions); // Sauvegarde du fichier + fermeture
+            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(Promotions); // Sauvegarde du fichier
         }
 
         // Ajout d'une promotion 
@@ -85,9 +88,10 @@ namespace GestionPromotion.Business.BC
             }
             catch (Exception)
             {
-                Promotions = null;
-            } 
+                Promotions = new Entity.BC.Promotions();
+            }
 
+            //Recherche de l'existance de la promotion
             Boolean v_existe = false;
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
@@ -102,7 +106,7 @@ namespace GestionPromotion.Business.BC
                 Promotions.Liste_promotion.Add(p_promo); // Ajout d'une promotion
             }
 
-            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(Promotions); // Sauvegarde du fichier xml + fermeture
+            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(Promotions); // Sauvegarde du fichier xml
         }
 
         // Supprimer un étudiant
@@ -116,13 +120,15 @@ namespace GestionPromotion.Business.BC
             }
             catch (Exception)
             {
-                Promotions = null;
-            } 
+                Promotions = new Entity.BC.Promotions();
+            }
 
+            //Recherche de l'existance de la promotion
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
                 {
+                    // Recherche de l'existance de l'etudiant
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in v_promo.Liste_etudiant)
                     {
                         if (p_etu.Nom == v_etu.Nom)
@@ -148,9 +154,10 @@ namespace GestionPromotion.Business.BC
             }
             catch (Exception)
             {
-                Promotions = null;
-            } 
+                Promotions = new Entity.BC.Promotions();
+            }
 
+            //Recherche de l'existance de la promotion
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
@@ -174,13 +181,15 @@ namespace GestionPromotion.Business.BC
             }
             catch (Exception)
             {
-                Promotions = null;
-            } 
+                Promotions = new Entity.BC.Promotions();
+            }
 
+            //Recherche de l'existance de la promotion
             foreach (GestionPromotion.Entity.BC.Promotion v_promo in Promotions.Liste_promotion)
             {
                 if (p_promo.Annee == v_promo.Annee)
                 {
+                    // Recherche de l'existance de l'etudiant
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in v_promo.Liste_etudiant)
                     {
                         if (p_etu.Nom == v_etu.Nom)
