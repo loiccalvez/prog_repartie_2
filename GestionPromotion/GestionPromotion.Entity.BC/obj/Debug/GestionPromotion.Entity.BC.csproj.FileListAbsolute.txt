@@ -13,3 +13,8 @@ C:\Users\Loïc\Documents\Depot\prog_repartie_2\GestionPromotion\GestionPromotion
 C:\Users\Loïc\Documents\Depot\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.csprojResolveAssemblyReference.cache
 C:\Users\Loïc\Documents\Depot\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.dll
 C:\Users\Loïc\Documents\Depot\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.pdb
+C:\Users\TEMP.DPTINFO.001\Desktop\ygjvh\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Debug\GestionPromotion.Entity.BC.dll
+C:\Users\TEMP.DPTINFO.001\Desktop\ygjvh\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Debug\GestionPromotion.Entity.BC.pdb
+C:\Users\TEMP.DPTINFO.001\Desktop\ygjvh\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.csprojResolveAssemblyReference.cache
+C:\Users\TEMP.DPTINFO.001\Desktop\ygjvh\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.dll
+C:\Users\TEMP.DPTINFO.001\Desktop\ygjvh\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Debug\GestionPromotion.Entity.BC.pdb

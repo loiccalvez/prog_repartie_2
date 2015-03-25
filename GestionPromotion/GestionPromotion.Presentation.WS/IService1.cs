@@ -112,7 +112,6 @@ namespace GestionPromotion.Presentation.WS
             get { return m_liste_etudiant; }
             set { m_liste_etudiant = value; }
         }
-
     }
 
     [DataContract]
@@ -129,7 +128,6 @@ namespace GestionPromotion.Presentation.WS
             get { return m_liste_promotion; }
             set { m_liste_promotion = value; }
         }
-
     }
 
 }
