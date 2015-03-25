@@ -121,7 +121,6 @@ namespace GestionPromotion.Presentation.WS
     }
 
     [DataContract]
-
     public class Promotions
     {
         // Variables de la classe
@@ -136,8 +135,6 @@ namespace GestionPromotion.Presentation.WS
             set { m_liste_promotion = value; }
         }
 
-
     }
-
 
 }
