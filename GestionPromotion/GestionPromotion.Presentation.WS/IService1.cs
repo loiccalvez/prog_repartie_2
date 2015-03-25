@@ -36,27 +36,6 @@ namespace GestionPromotion.Presentation.WS
 
     // Utilisez un contrat de données (comme illustré dans l'exemple ci-dessous) pour ajouter des types composites aux opérations de service.
     // Vous pouvez ajouter des fichiers XSD au projet. Une fois le projet généré, vous pouvez utiliser directement les types de données qui y sont définis, avec l'espace de noms "GestionPromotion.Presentation.WS.ContractType".
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
-
 
     [DataContract]
     public class Etudiant
@@ -65,6 +44,8 @@ namespace GestionPromotion.Presentation.WS
         private String m_prenom;
         private String m_nom;
         private String m_date_de_naissance;
+        private int m_id;
+        private static int m_nbr_etud = 0;
 
         // Getter/Setter
         [DataMember]
@@ -84,6 +65,20 @@ namespace GestionPromotion.Presentation.WS
         {
             get { return m_date_de_naissance; }
             set { m_date_de_naissance = value; }
+        }
+
+        [DataMember]
+        public int Id
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
+
+        [DataMember]
+        public static int Nbr_etud
+        {
+            get { return Etudiant.m_nbr_etud; }
+            set { Etudiant.m_nbr_etud = value; }
         }
 
     }

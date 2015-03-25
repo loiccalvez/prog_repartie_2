@@ -19,10 +19,10 @@ namespace GestionPromotion.Business.BC
         public static void Initialisation()
         {
             //tests
-            GestionPromotion.Data.BC.Serialisation.test_serial();
+            //GestionPromotion.Data.BC.Serialisation.test_serial();
 
-            //GestionPromotion.Entity.BC.Promotions v_liste = new Entity.BC.Promotions();
-            //GestionPromotion.Data.BC.Serialisation.serialiser_promotion(v_liste);
+            GestionPromotion.Entity.BC.Promotions v_liste = new Entity.BC.Promotions();
+            GestionPromotion.Data.BC.Serialisation.serialiser_promotion(v_liste);
         }
 
         // Fonction servant à retourner la liste des promotions
@@ -61,7 +61,7 @@ namespace GestionPromotion.Business.BC
                     Boolean v_existe = false;
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in p_promo.Liste_etudiant)
                     {
-                        if (p_etu.Nom == v_etu.Nom)
+                        if (p_etu.Id == v_etu.Id)
                         {
                             v_existe = true;
                         }
@@ -131,9 +131,10 @@ namespace GestionPromotion.Business.BC
                     // Recherche de l'existance de l'etudiant
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in v_promo.Liste_etudiant)
                     {
-                        if (p_etu.Nom == v_etu.Nom)
+                        if (p_etu.Id == v_etu.Id)
                         {
-                            v_promo.Liste_etudiant.Remove(p_etu);
+                            v_promo.Liste_etudiant.Remove(v_etu);
+                            break;
                         }
                     }
 
@@ -162,7 +163,8 @@ namespace GestionPromotion.Business.BC
             {
                 if (p_promo.Annee == v_promo.Annee)
                 {
-                    Promotions.Liste_promotion.Remove(p_promo); // suppression de la promotion
+                    Promotions.Liste_promotion.Remove(v_promo); // suppression de la promotion
+                    break;
                 }
             }
 
@@ -192,10 +194,11 @@ namespace GestionPromotion.Business.BC
                     // Recherche de l'existance de l'etudiant
                     foreach (GestionPromotion.Entity.BC.Etudiant v_etu in v_promo.Liste_etudiant)
                     {
-                        if (p_etu.Nom == v_etu.Nom)
+                        if (p_etu.Id == v_etu.Id)
                         {
                             v_promo.Liste_etudiant.Remove(v_etu); // supression de l'étudiant à modifier
                             v_promo.Liste_etudiant.Add(p_etu); // modif du nouvel étudiant
+                            break;
                         }
                     }
                 }

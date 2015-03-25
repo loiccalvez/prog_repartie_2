@@ -44,7 +44,11 @@ namespace GestionPromotion.Entity.BC
 
         // Constructeurs
         // Constructeur par défaut. Nécessaire à la sérialisatio
-        public Etudiant() { }
+        public Etudiant()
+        {
+            m_nbr_etud += 1;
+            this.m_id = m_nbr_etud;
+        }
         // Constructeur 1 : tous les paramètres doivent être passés.
         public Etudiant(String p_prenom, String p_nom, String p_date_de_naissance)
         {
