@@ -1,0 +1,12 @@
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Presentation.WS.dll.config
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Presentation.WS.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Presentation.WS.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Business.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Data.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Business.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\bin\Release\GestionPromotion.Data.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Release\GestionPromotion.Presentation.WS.csprojResolveAssemblyReference.cache
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Release\GestionPromotion.Presentation.WS.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Presentation.WS\obj\Release\GestionPromotion.Presentation.WS.pdb

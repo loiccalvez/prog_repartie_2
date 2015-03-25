@@ -61,8 +61,5 @@ namespace GestionPromotion.Entity.BC
                 this.m_id = m_nbr_etud;
             }
         }
-
-        // Méthodes de la classe Etudiant
-        // ICI
     }
 }

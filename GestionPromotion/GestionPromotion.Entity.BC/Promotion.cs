@@ -54,8 +54,5 @@ namespace GestionPromotion.Entity.BC
             this.m_annee = p_annee;
             this.m_liste_etudiant = null;
         }
-
-        // Méthodes de la classe Etudiant
-        // ICI
     }
 }

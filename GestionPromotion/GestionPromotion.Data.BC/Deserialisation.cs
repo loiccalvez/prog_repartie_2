@@ -38,15 +38,5 @@ namespace GestionPromotion.Data.BC
             return deserialiser_promotion("C://TP", "promotions.xml");
         }
 
-        // Fonction de test. A garder pour le moment -- Loïc C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2
-        public static GestionPromotion.Entity.BC.Promotions test_deserial()
-        {
-            XmlSerializer xs = new XmlSerializer(typeof(GestionPromotion.Entity.BC.Promotions));
-            using (StreamReader rd = new StreamReader("C://Users//Loïc//Documents//GestionPromotion//prog_repartie_2//promotions.xml"))
-            {
-                GestionPromotion.Entity.BC.Promotions promotions = xs.Deserialize(rd) as Entity.BC.Promotions;
-                return promotions;
-            }
-        }
     }
 }

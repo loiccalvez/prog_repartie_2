@@ -18,8 +18,6 @@ namespace GestionPromotion.Business.BC
 
         public static void Initialisation()
         {
-            //tests
-            //GestionPromotion.Data.BC.Serialisation.test_serial();
 
             GestionPromotion.Entity.BC.Promotions v_liste = new Entity.BC.Promotions();
             GestionPromotion.Data.BC.Serialisation.serialiser_promotion(v_liste);

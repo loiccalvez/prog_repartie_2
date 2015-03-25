@@ -1,0 +1,4 @@
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Release\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\bin\Release\GestionPromotion.Entity.BC.pdb
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Release\GestionPromotion.Entity.BC.dll
+J:\Cours\A2\NET\prog_repartie_2\prog_repartie_2\GestionPromotion\GestionPromotion.Entity.BC\obj\Release\GestionPromotion.Entity.BC.pdb
